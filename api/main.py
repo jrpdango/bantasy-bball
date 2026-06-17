@@ -8,9 +8,8 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from dotenv import load_dotenv
 from fastapi import FastAPI, Header, HTTPException
-from pydantic import BaseModel
-
 from nba_api.stats.endpoints import CommonAllPlayers
+from pydantic import BaseModel
 
 from . import db
 from .utils import (
@@ -315,5 +314,3 @@ async def get_lifetime_leaderboard():
 async def register_guild(body: GuildRegistration):
     db.upsert_guild(body.guild_id, body.webhook_url)
     return {"guild_id": body.guild_id}
-
-if __name__ == "main":
