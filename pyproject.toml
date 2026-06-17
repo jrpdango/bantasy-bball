@@ -1,0 +1,16 @@
+[project]
+name = "bantasy-bball"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "apscheduler>=3.11.2",
+    "fastapi[standard-no-fastapi-cloud-cli]>=0.137.1",
+    "nba-api",
+    "python-dotenv>=1.2.2",
+    "supabase>=2.31.0",
+]
+
+[tool.uv.sources]
+nba-api = { git = "https://github.com/swar/nba_api" }
